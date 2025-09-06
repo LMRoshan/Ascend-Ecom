@@ -12,7 +12,7 @@ const ProdByCategory = () => {
 
   const prodbyCategory = async () => {
     try {
-      const response = await fetch(`http://localhost:3005/api/products/category/${categoryName}`, {
+      const response = await fetch(`https://ascend-y4h7.onrender.com/api/products/category/${categoryName}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

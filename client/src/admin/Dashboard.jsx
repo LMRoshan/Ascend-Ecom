@@ -46,7 +46,7 @@ const Dashboard = () => {
       }
 
       const response = await fetch(
-        `http://localhost:3005/api/messages/deleteMessage/${id}`,
+        `https://ascend-y4h7.onrender.com/api/messages/deleteMessage/${id}`,
         {
           method: "DELETE",
           headers: {

@@ -47,7 +47,7 @@ const DetailInfo = () => {
             <div className="row detail">
               <div className="col-md-6 d-flex justify-content-center">
                 <img
-                  src={`http://localhost:3005/uploads/${currentProduct.img[0]}`}
+                  src={`https://ascend-y4h7.onrender.com/uploads/${currentProduct.img[0]}`}
                   alt={currentProduct.title}
                   style={{ width: "100%", height: "100%" }}
                 />

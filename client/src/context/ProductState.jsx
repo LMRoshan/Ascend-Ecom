@@ -12,7 +12,7 @@ const ProductState = (props) => {
 
   const allProduct = async () => {
     try {
-      const response = await fetch("http://localhost:3005/api/products/getProducts", {
+      const response = await fetch("https://ascend-y4h7.onrender.com/api/products/getProducts", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -35,7 +35,7 @@ const ProductState = (props) => {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:3005/api/products/deleteProduct/${id}`, {
+      const response = await fetch(`https://ascend-y4h7.onrender.com/api/products/deleteProduct/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -66,7 +66,7 @@ const ProductState = (props) => {
   }
   
   try {
-    const response = await fetch(`http://localhost:3005/api/products/updateProduct/${id}`, {
+    const response = await fetch(`https://ascend-y4h7.onrender.com/api/products/updateProduct/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

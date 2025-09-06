@@ -33,7 +33,7 @@ const Product = () => {
                 >
                   <img
                     className="card-img-top"
-                    src={`http://localhost:3005/uploads/${product.img[0]}`}
+                    src={`https://ascend-y4h7.onrender.com/uploads/${product.img[0]}`}
                     alt="product"
                     style={{ height: "23rem", objectFit: "cover" }}
                   />

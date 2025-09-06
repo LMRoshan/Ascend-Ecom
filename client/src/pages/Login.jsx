@@ -32,7 +32,7 @@ const Login = () => {
       onSubmit: async (values, action) => {
         const { username, password } = values;
         try {
-          const response = await fetch("http://localhost:3005/api/auth/login", {
+          const response = await fetch("https://ascend-y4h7.onrender.com/api/auth/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
