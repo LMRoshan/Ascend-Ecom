@@ -1,7 +1,7 @@
 import express from 'express';
 import  expressValidator  from 'express-validator';
 import Message from '../models/Message.js';
-import fetchUser from '../middleware/FetchUser.js';
+import fetchUser from '../middleware/Fetchuser.js';
 
 const { body, validationResult } = expressValidator;
 const router = express.Router();
