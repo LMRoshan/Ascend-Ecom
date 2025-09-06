@@ -18,7 +18,7 @@ const Dashboard = () => {
         return;
       }
       const response = await fetch(
-        "http://localhost:3005/api/messages/getMessages",
+        "https://ascend-y4h7.onrender.com/api/messages/getMessages",
         {
           method: "GET",
           headers: {
