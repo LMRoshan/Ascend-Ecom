@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const dbURL = 'mongodb://127.0.0.1:27017/ascend';
+const dbURL = 'mongodb+srv://roshan:roshan497@acsend.tw7etwf.mongodb.net/?retryWrites=true&w=majority&appName=acsend';
 
 const connectDB = () => {
     mongoose.connect(dbURL)
