@@ -1,161 +1,206 @@
-Ascend Clothing E-Commerce (MERN)
-A full-stack mini e-commerce web app built for Ascend Company using the MERN stack. It provides a product catalog for shoppers while giving admins secure tools to manage inventory.
+```
+# Ascend Clothing E-Commerce (MERN)
 
-🚀 Features
+A **full-stack mini e-commerce web app** built for **Ascend Company** using the **MERN stack**.  
+It provides a product catalog for shoppers while giving admins secure tools to manage inventory.
 
-User-Facing
-Browse all products by category in a clean, responsive grid.
-View detailed product pages (name, price, description, category, stock, image).
-Mobile-friendly swiper/slideshow for featured products.
-Send messages/queries to the admin.
+---
 
-Admin
+## 🚀 Features
 
-Create, Update, Delete (CRUD) products.
-Upload product images (stored on the server / cloud).
-View & delete user messages.
-Dashboard secured by JWT authentication (passwords stored as hashes).
+### User-Facing
+- Browse all products by **category** in a clean, responsive grid
+- View **detailed product pages** (name, price, description, category, stock, image)
+- Mobile-friendly **swiper/slideshow** for featured products
+- Send **messages / queries** to the admin
 
-🛠 Tech Stack
-Layer	Tech
-Frontend	React, Context API (state), Swiper, Axios
-Backend	Node.js, Express.js
-Database	MongoDB Atlas (Cluster) with Mongoose
-Auth	JWT, bcrypt (hashed passwords)
-UI / UX	Custom CSS & responsive layout
-📂 Project Structure
+### Admin
+- **Create, Update, Delete (CRUD)** products
+- **Upload product images** (stored on server or cloud)
+- View & **delete user messages**
+- Dashboard secured with **JWT authentication** (passwords stored as hashes)
+
+---
+
+## 🛠 Tech Stack
+
+| Layer    | Technology                            |
+|----------|----------------------------------------|
+| Frontend | React, Context API (state), Swiper, Axios |
+| Backend  | Node.js, Express.js                    |
+| Database | MongoDB Atlas (Cluster) + Mongoose     |
+| Auth     | JWT, bcrypt (hashed passwords)         |
+| UI / UX  | Custom CSS, Responsive Layout          |
+
+---
+
+## 📂 Project Structure
+
+```
+
 ascend-ecom/
 │
-├── client/               # React frontend
+├── client/                 # React frontend
 │   ├── public/
 │   └── src/
-├──     ├── admin/        #admin dashboard, admin CRUD operation
-│       ├── components/   # Reusable UI components
-│       ├── context/      # React Context for state
-│       ├── pages/        # Product listing, detail, 
+│       ├── admin/          # Admin dashboard & CRUD
+│       ├── components/     # Reusable UI components
+│       ├── context/        # React Context for state
+│       ├── pages/          # Product listing & detail
 │       └── App.jsx
 │
-├── server/               # Node + Express backend
-│   ├── models/           # Mongoose schemas (Product, Message, User)
-│   ├── routes/           # Product & Auth & Message routes
-│   ├── middleware/       # Auth checks, validation
-│   └── index.js
-│   └── db.js
+├── server/                 # Node + Express backend
+│   ├── models/             # Mongoose schemas (Product, Message, User)
+│   ├── routes/             # Product, Auth & Message routes
+│   ├── middleware/         # Auth checks, validation
+│   ├── db.js               # MongoDB connection
+│   └── index.js            # Entry point
 │
 └── README.md
 
-⚙️ API Endpoints
-Method	Endpoint	Description	Auth
-POST	/api/products	Add new product	Admin
-GET	/api/products	Get all products	Public
-GET	/api/products/:id	Get a single product	Public
-PUT	/api/products/:id	Update product	Admin
-DELETE	/api/products/:id	Delete product	Admin
-POST	/api/auth/login	Login admin / user	Public
-POST	/api/messages	Send message to admin	Public
-GET	/api/messages	View all user messages	Admin
-DELETE	/api/messages/:id	Delete message	Admin
+````
 
-🔑 Authentication & Security
+---
 
-JWT for stateless sessions.
-Role-based access control: only Admins can add/edit/delete products or view messages.
-Passwords hashed with bcrypt.
+## ⚙️ API Endpoints
 
-🗃 Database Schema
+| Method | Endpoint            | Description         | Auth  |
+|--------|---------------------|---------------------|-------|
+| POST   | `/api/products`     | Add new product     | Admin |
+| GET    | `/api/products`     | Get all products    | Public|
+| GET    | `/api/products/:id` | Get a single product| Public|
+| PUT    | `/api/products/:id` | Update product      | Admin |
+| DELETE | `/api/products/:id` | Delete product      | Admin |
+| POST   | `/api/auth/login`   | Login admin/user    | Public|
+| POST   | `/api/messages`     | Send message        | Public|
+| GET    | `/api/messages`     | View all messages   | Admin |
+| DELETE | `/api/messages/:id` | Delete message      | Admin |
 
-Product
-  {
-    _id: ObjectId,
-    name: String,
-    price: Number,
-    description: String,
-    category: String,
-    stock: Number,
-    imageUrl: String
-  }
+---
 
+## 🔑 Authentication & Security
 
-Message
-  {
-    _id: ObjectId,
-    name: String,
-    email: String,
-    message: String,
-  }
+- **JWT** for stateless sessions  
+- **Role-based access control**: only Admins can add/edit/delete products or view messages  
+- **Passwords hashed** with bcrypt  
 
+---
 
-User
-  {
-    _id: ObjectId,
-    username: String,
-    email: String, 
-    password: String (hashed),
-  }
+## 🗃 Database Schema
 
-📦 Installation
+**Product**
+```
+{
+  _id: ObjectId,
+  name: String,
+  price: Number,
+  description: String,
+  category: String,
+  stock: Number,
+  imageUrl: String
+}
+````
+
+**Message**
+
+```
+{
+  _id: ObjectId,
+  name: String,
+  email: String,
+  message: String
+}
+```
+
+**User**
+
+```
+{
+  _id: ObjectId,
+  username: String,
+  email: String,
+  password: String // hashed
+}
+```
+
+---
+
+## 📦 Installation
+
+```bash
 # Clone repo
-  git clone https://github.com/LMRoshan/Ascend-Ecom
-  cd ascend-ecom
+git clone https://github.com/LMRoshan/Ascend-Ecom
+cd ascend-ecom
+```
 
-# Install backend deps
-  cd server
-  npm install
-  npm install bcrypt
-  npm install cors
-  npm install dotenv
-  npm install express
-  npm install express-validator
-  npm install jsonwebtoken
-  npm install mongoose
-  npm install multer
-  npm install nodemon
+### Backend
 
-# Install frontend deps
-  cd ../client
-  npm install
-  npm install bootstrap
-  npm install formik
-  npm install motion
-  npm install react
-  npm install react-dom
-  npm install react-icons
-  npm install react-router-dom
-  npm install swiper
-  npm install yup
+```bash
+cd server
+npm install
+npm install bcrypt cors dotenv express express-validator jsonwebtoken mongoose multer nodemon
+```
 
-Environment Variables
-  Create a .env in server/:
-  dbURL = your-mongodb-cluster-uri
-  JWT_SECRET=your-secret-key
+### Frontend
 
-Run Locally
+```
+cd ../client
+npm install
+npm install bootstrap formik framer-motion react react-dom react-icons react-router-dom swiper yup
+```
+
+---
+
+### Environment Variables
+
+Create a `.env` inside `server/`:
+
+```
+dbURL= mongodb+srv://roshan:roshan497@acsend.tw7etwf.mongodb.net/?retryWrites=true&w=majority&appName=acsend
+JWT_SECRET=Ascend
+```
+
+---
+
+### Run Locally
+
+```
 # Run backend
-  cd server
-  nodemon ./index.js
+cd server
+nodemon ./index.js
 
 # Run frontend
-  cd ../client
-  npm run dev
+cd ../client
+npm run dev
+```
 
-🌐 Deployment
+---
 
-Frontend: Deployed on Vercel
-Backend: Deployed on Render
-Database: MongoDB Atlas Cluster
-Deployed App → https://ascend-kappa-one.vercel.app/
+## 🌐 Deployment
 
-📈 Possible Future Enhancements
+* **Frontend:** Vercel
+* **Backend:** Render
+* **Database:** MongoDB Atlas
 
-Full shopping cart & checkout flow
-Order history & email notifications
-Advanced search & filters
-Product reviews and ratings
+Live App → [https://ascend-kappa-one.vercel.app/]
 
-🤝 Contributing
+---
 
-Fork the project
-Create your feature branch (git checkout -b feature/new-feature)
-Commit changes (git commit -m 'Add new feature')
-Push to the branch (git push origin feature/new-feature)
-Open a Pull Request
+## 📈 Possible Future Enhancements
+
+* Full **shopping cart** & checkout flow
+* **Order history** & email notifications
+* Advanced **search** & filters
+* Product **reviews** & ratings
+
+---
+
+## 🤝 Contributing
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/new-feature`)
+3. Commit changes (`git commit -m "Add new feature"`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Open a Pull Request
+
+```
