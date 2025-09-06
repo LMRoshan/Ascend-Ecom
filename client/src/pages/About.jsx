@@ -46,7 +46,7 @@ const About = () => {
           }}
         >
           <div className="row align-items-center">
-            {/* Logo Section with Scroll Animation */}
+            
             <motion.div
               className="logo-img d-flex flex-column align-items-center col-md-6"
               initial="offscreen"
@@ -71,7 +71,7 @@ const About = () => {
               </h3>
             </motion.div>
 
-            {/* Text Section with Scroll Animation */}
+           
             <motion.div
               className="story-text col-md-6"
               initial="offscreen"
