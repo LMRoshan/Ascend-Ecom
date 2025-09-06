@@ -1,6 +1,6 @@
 import express from 'express';
 import Product from '../models/Product.js';
-import fetchUser from '../middleware/FetchUser.js';
+import fetchUser from '../middleware/Fetchuser.js';
 import expressValidator from 'express-validator';
 
 const { body, validationResult } = expressValidator;
